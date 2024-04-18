@@ -1,4 +1,3 @@
-import { func } from "prop-types";
 import React from "react";
 import { USER_GET, TOKEN_POST, TOKEN_VALIDATE_POST } from "./api";
 import { useNavigate } from "react-router-dom";
@@ -19,9 +18,8 @@ export const UserStorage = ({ children }) => {
       setLoading(false);
       setLogin(false);
       window.localStorage.removeItem("token");
-      navigate("/conta");
     },
-    [navigate],
+    [],
   );
 
   async function getUser(token) {
